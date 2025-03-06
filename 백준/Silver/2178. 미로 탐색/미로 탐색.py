@@ -1,5 +1,4 @@
 import sys
-from collections import deque
 # 최단경로는 bfs
 # 여러 갈래로 경로 생기면 따로 세줘야함 
 n,m=map(int,sys.stdin.readline().split())
@@ -9,11 +8,11 @@ fin=False
 def bfs(a,b):
     global queue
     global fin
-    queue=deque([[0,0,1]])
+    queue=[[0,0,1]]
     # 시작 좌표, 거리 
     maze[a][b]="0"
     while (queue):
-        c,d,l=queue.popleft()
+        c,d,l=queue.pop(0)
         # if (not queue[cur]):
         #     cur+=1
         #     queue.append([])
